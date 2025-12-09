@@ -37,14 +37,19 @@ section.flex.flex-row.flex-wrap.justify-center {
 
 /* Remove/reduce spacing between header and content - smaller top margin */
 main.w-full.min-w-0.max-w-6xl {
-  padding-top: 0.5rem !important;
+  padding-top: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* Hide spacer div */
+/* Hide spacer divs and reduce bottom margins */
 .mt-16 {
   display: none !important;
+}
+
+/* Remove large bottom margins */
+.mb-16 {
+  margin-bottom: 0 !important;
 }
 
 /* Reduce prose default margins */
@@ -101,7 +106,24 @@ article.w-full {
 main {
   width: 120% !important;
   max-width: 120% !important;
-  
+}
+
+/* Remove bottom spacing in Bio section (home page) */
+html[data-hbb-relurl="/"] .resume-biography {
+  padding-bottom: 0 !important;
+}
+
+html[data-hbb-relurl="/"] .resume-biography > .max-w-7xl {
+  padding-bottom: 0 !important;
+}
+
+
+
+/* Decrease project box sizes */
+.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3 > div {
+  max-height: 350px !important;
+  transform: scale(0.85) !important;
+  transform-origin: top center !important;
 }
 
 

@@ -33,6 +33,6 @@ Web UI: Gradio interface for easy interaction
 	src="https://velagalasr-dealer-bot.hf.space"
 	frameborder="0"
 	width="850"
-	height="450"
+	height="730"
 ></iframe>
 
