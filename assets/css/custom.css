@@ -123,19 +123,27 @@ html[data-hbb-relurl="/"] .md\:col-span-8 > .mb-16:nth-of-type(3) {
   display: none !important;
 }
 
-/* Decrease avatar size in bio section */
-html[data-hbb-relurl="/"] .avatar-wrapper img.avatar {
+/* Decrease avatar size in bio section - simpler selector */
+.avatar-wrapper img {
   width: 150px !important;
   height: 150px !important;
+  max-width: 150px !important;
+  max-height: 150px !important;
 }
 
-/* Decrease font sizes in bio section */
-html[data-hbb-relurl="/"] .md\:col-span-4 h1 {
+/* Decrease font sizes in bio section - simpler selectors */
+.resume-biography h1 {
   font-size: 2rem !important;
   line-height: 2.5rem !important;
 }
 
-html[data-hbb-relurl="/"] .md\:col-span-4 .text-lg {
+.resume-biography .text-4xl,
+.resume-biography .text-5xl,
+.resume-biography .text-6xl {
+  font-size: 2rem !important;
+}
+
+.resume-biography .text-lg {
   font-size: 1rem !important;
 }
 
