@@ -109,17 +109,17 @@ main {
 }
 
 /* Remove bottom spacing in Bio section (home page) */
-html[data-hbb-relurl="/"] .resume-biography {
+.resume-biography {
   padding-bottom: 0 !important;
   padding-top: 0 !important;
 }
 
-html[data-hbb-relurl="/"] .resume-biography > .max-w-7xl {
+.resume-biography > .max-w-7xl {
   padding-bottom: 0 !important;
 }
 
-/* Hide education section in bio - target the second mb-16 (education) not the first (CV download) */
-html[data-hbb-relurl="/"] .md\:col-span-8 > .mb-16:nth-of-type(3) {
+/* Hide education section in bio */
+.resume-biography .md\:col-span-8 > .mb-16:last-of-type {
   display: none !important;
 }
 
