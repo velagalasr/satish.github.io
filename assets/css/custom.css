@@ -111,10 +111,31 @@ main {
 /* Remove bottom spacing in Bio section (home page) */
 html[data-hbb-relurl="/"] .resume-biography {
   padding-bottom: 0 !important;
+  padding-top: 0 !important;
 }
 
 html[data-hbb-relurl="/"] .resume-biography > .max-w-7xl {
   padding-bottom: 0 !important;
+}
+
+/* Hide education section in bio - target the second mb-16 (education) not the first (CV download) */
+html[data-hbb-relurl="/"] .md\:col-span-8 > .mb-16:nth-of-type(3) {
+  display: none !important;
+}
+
+/* Decrease avatar size in bio section */
+html[data-hbb-relurl="/"] .resume-biography .avatar {
+  width: 150px !important;
+  height: 150px !important;
+}
+
+/* Decrease font sizes in bio section */
+html[data-hbb-relurl="/"] .resume-biography h1 {
+  font-size: 2rem !important;
+}
+
+html[data-hbb-relurl="/"] .resume-biography .text-lg {
+  font-size: 1rem !important;
 }
 
 
@@ -124,6 +145,11 @@ html[data-hbb-relurl="/"] .resume-biography > .max-w-7xl {
   max-height: 350px !important;
   transform: scale(0.85) !important;
   transform-origin: top center !important;
+}
+
+/* Hide author section on all project pages - hide the flex container with avatar and bio */
+article .flex.pt-12.pb-4 {
+  display: none !important;
 }
 
 

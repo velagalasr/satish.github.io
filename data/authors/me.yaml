@@ -9,7 +9,7 @@ name:
   pronunciation: ''  # Example: Wáng Wěi
   pronouns: he/him
 status:
-  icon: "☕️"
+  icon: ""
 bio: |
   I’m an AI Engineer specializing in AI-native security and anomaly-detection platforms, taking solutions from 0→1 prototypes to enterprise-scale deployments. I have deep expertise in multi-agent architectures, GenAI/LLMs, SLMs, fine-tuning, RAG pipelines, and evaluation-driven development, with a strong track record delivering impactful AI systems across Azure, AWS, and GCP. I focus on threat detection, fraud prevention, and real-time anomaly identification with a solid foundation in regulatory compliance. I excel at leading cross-functional initiatives, translating complex security workflows into AI-powered experiences, and driving clarity in high-ambiguity environments.
   
