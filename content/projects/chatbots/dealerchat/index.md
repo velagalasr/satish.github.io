@@ -1,9 +1,9 @@
 ---
-title: DealerChat
-type: project
+title: Dealer Chat Bot
+type: plain
 draft: false
 featured_image: ""
-summary: "Production-ready RAG-based Q&A system with multi-agent orchestration"
+summary: "RAG-based Q&A system for dealer support with multi-agent orchestration"
 weight: 1
 authors: []
 show_authors: false
@@ -12,31 +12,17 @@ show_reading_time: false
 show_related: false
 show_comments: false
 hide_image: true
+show_title: false
 ---
-🤖 Dealer Bot
-A production-ready RAG-based Q&A system for dealer support using intelligent multi-agent orchestration.
+![Dealer Bot](/images/dealerbot.png)
 
-Features
-4 Intelligent Agents:
+**Demo:** [https://velagalasr-dealer-bot.hf.space](https://velagalasr-dealer-bot.hf.space)
 
-Intent Classifier Agent (Rules + LLM hybrid)
-Anomaly Detection Agent (Security & fraud detection)
-RAG Agent (Intelligent document retrieval & ranking)
-Response Synthesis Agent (Context-aware responses)
-Semantic Search: Vector database with embeddings
 
-Document Management: Upload and manage knowledge base
-
-Security: Malicious query detection, risk scoring
-
-Web UI: Gradio interface for easy interaction
-
-## Demo 
-https://velagalasr-dealer-bot.hf.space
 <iframe
 	src="https://velagalasr-dealer-bot.hf.space"
 	frameborder="0"
 	width="850"
-	height="730"
+	height="850"
 ></iframe>
 

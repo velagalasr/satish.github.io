@@ -11,6 +11,38 @@
   display: none !important;
 }
 
+/* Hide page title - target the h1 with Hugo Blox classes */
+article h1.mt-2.text-4xl.font-bold.tracking-tight,
+article header h1,
+.page-title,
+h1.title,
+main h1:first-of-type {
+  display: none !important;
+}
+
+/* Remove extra header spacing */
+article header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Remove space above content and image */
+main.w-full.min-w-0.max-w-6xl {
+  padding-top: 0 !important;
+}
+
+.prose p:first-child img:first-child {
+  margin-top: 0 !important;
+}
+
+.prose img:first-child {
+  margin-top: 0 !important;
+}
+
+article main {
+  padding-top: 0 !important;
+}
+
 /* Extra defensive rule: hide any element whose class name contains "reading" */
 [class*="reading"] {
   display: none !important;
@@ -111,7 +143,7 @@ main {
 /* Remove bottom spacing in Bio section (home page) */
 .resume-biography {
   padding-bottom: 0 !important;
-  padding-top: 0 !important;
+  padding-top: 2rem !important;
 }
 
 .resume-biography > .max-w-7xl {
