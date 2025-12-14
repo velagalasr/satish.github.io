@@ -1,0 +1,379 @@
+<!-- Chat Widget -->
+<div id="chat-widget">
+  <!-- Chat Button -->
+  <button id="chat-button" class="chat-button" aria-label="Chat with my assistant">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </button>
+
+  <!-- Chat Window -->
+  <div id="chat-window" class="chat-window" style="display: none;">
+    <!-- Resize Handles -->
+    <div class="resize-handle resize-handle-top"></div>
+    <div class="resize-handle resize-handle-left"></div>
+    <div class="resize-handle resize-handle-right"></div>
+    <div class="resize-handle resize-handle-bottom"></div>
+    <div class="resize-handle resize-handle-top-left"></div>
+    <div class="resize-handle resize-handle-top-right"></div>
+    <div class="resize-handle resize-handle-bottom-left"></div>
+    <div class="resize-handle resize-handle-bottom-right"></div>
+    
+    <div class="chat-header">
+      <span class="chat-title">Chat with my assistant</span>
+      <button id="chat-close" class="chat-close-button" aria-label="Close chat">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="chat-content">
+      <iframe 
+        id="chat-iframe"
+        src="https://satish-ai-assistant.mangoriver-796b80ca.centralus.azurecontainerapps.io/"
+        frameborder="0"
+        allow="microphone; camera"
+        style="width: 100%; height: 100%; border: none;">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Chat Button */
+  .chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 9998;
+  }
+
+  .chat-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .chat-button:active {
+    transform: scale(0.95);
+  }
+
+  /* Chat Window */
+  .chat-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 300px;
+    height: 500px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    overflow: hidden;
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Chat Header */
+  .chat-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .chat-title {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .chat-close-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+  }
+
+  .chat-close-button:hover {
+    opacity: 0.8;
+  }
+
+  /* Chat Content */
+  .chat-content {
+    flex: 1;
+    overflow: hidden;
+    background: #f9fafb;
+  }
+
+  /* Resize Handles */
+  .resize-handle {
+    position: absolute;
+    z-index: 10;
+  }
+
+  .resize-handle-top,
+  .resize-handle-bottom {
+    left: 8px;
+    right: 8px;
+    height: 8px;
+    cursor: ns-resize;
+  }
+
+  .resize-handle-top {
+    top: 0;
+  }
+
+  .resize-handle-bottom {
+    bottom: 0;
+  }
+
+  .resize-handle-left,
+  .resize-handle-right {
+    top: 8px;
+    bottom: 8px;
+    width: 8px;
+    cursor: ew-resize;
+  }
+
+  .resize-handle-left {
+    left: 0;
+  }
+
+  .resize-handle-right {
+    right: 0;
+  }
+
+  .resize-handle-top-left,
+  .resize-handle-top-right,
+  .resize-handle-bottom-left,
+  .resize-handle-bottom-right {
+    width: 12px;
+    height: 12px;
+  }
+
+  .resize-handle-top-left {
+    top: 0;
+    left: 0;
+    cursor: nwse-resize;
+  }
+
+  .resize-handle-top-right {
+    top: 0;
+    right: 0;
+    cursor: nesw-resize;
+  }
+
+  .resize-handle-bottom-left {
+    bottom: 0;
+    left: 0;
+    cursor: nesw-resize;
+  }
+
+  .resize-handle-bottom-right {
+    bottom: 0;
+    right: 0;
+    cursor: nwse-resize;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .chat-window {
+      width: calc(100vw - 40px);
+      height: calc(100vh - 120px);
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    .chat-window {
+      width: 100vw;
+      height: 100vh;
+      bottom: 0;
+      right: 0;
+      border-radius: 0;
+    }
+
+    .chat-button {
+      bottom: 15px;
+      right: 15px;
+      width: 56px;
+      height: 56px;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    const chatButton = document.getElementById('chat-button');
+    const chatWindow = document.getElementById('chat-window');
+    const chatClose = document.getElementById('chat-close');
+
+    // Open chat window
+    chatButton.addEventListener('click', function() {
+      chatWindow.style.display = 'flex';
+      chatButton.style.display = 'none';
+    });
+
+    // Close chat window
+    chatClose.addEventListener('click', function() {
+      chatWindow.style.display = 'none';
+      chatButton.style.display = 'flex';
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && chatWindow.style.display === 'flex') {
+        chatWindow.style.display = 'none';
+        chatButton.style.display = 'flex';
+      }
+    });
+
+    // Resize functionality
+    let isResizing = false;
+    let currentHandle = null;
+    let startX, startY, startWidth, startHeight, startBottom, startRight;
+
+    const minWidth = 280;
+    const minHeight = 400;
+    const maxWidth = window.innerWidth - 40;
+    const maxHeight = window.innerHeight - 110;
+
+    const resizeHandles = chatWindow.querySelectorAll('.resize-handle');
+    
+    resizeHandles.forEach(handle => {
+      handle.addEventListener('mousedown', function(e) {
+        if (window.innerWidth <= 480) return; // Disable resize on small mobile
+        
+        isResizing = true;
+        currentHandle = handle;
+        startX = e.clientX;
+        startY = e.clientY;
+        
+        const rect = chatWindow.getBoundingClientRect();
+        startWidth = rect.width;
+        startHeight = rect.height;
+        startBottom = window.innerHeight - rect.bottom;
+        startRight = window.innerWidth - rect.right;
+        
+        e.preventDefault();
+        document.body.style.userSelect = 'none';
+      });
+    });
+
+    document.addEventListener('mousemove', function(e) {
+      if (!isResizing) return;
+
+      const deltaX = e.clientX - startX;
+      const deltaY = e.clientY - startY;
+
+      if (currentHandle.classList.contains('resize-handle-right')) {
+        const newWidth = Math.max(minWidth, Math.min(maxWidth, startWidth + deltaX));
+        chatWindow.style.width = newWidth + 'px';
+      }
+
+      if (currentHandle.classList.contains('resize-handle-left')) {
+        const newWidth = Math.max(minWidth, Math.min(maxWidth, startWidth - deltaX));
+        if (newWidth > minWidth && newWidth < maxWidth) {
+          chatWindow.style.width = newWidth + 'px';
+          chatWindow.style.right = (startRight - deltaX) + 'px';
+        }
+      }
+
+      if (currentHandle.classList.contains('resize-handle-bottom')) {
+        const newHeight = Math.max(minHeight, Math.min(maxHeight, startHeight + deltaY));
+        chatWindow.style.height = newHeight + 'px';
+      }
+
+      if (currentHandle.classList.contains('resize-handle-top')) {
+        const newHeight = Math.max(minHeight, Math.min(maxHeight, startHeight - deltaY));
+        if (newHeight > minHeight && newHeight < maxHeight) {
+          chatWindow.style.height = newHeight + 'px';
+          chatWindow.style.bottom = (startBottom - deltaY) + 'px';
+        }
+      }
+
+      // Corner handles (combine horizontal and vertical)
+      if (currentHandle.classList.contains('resize-handle-top-right')) {
+        const newWidth = Math.max(minWidth, Math.min(maxWidth, startWidth + deltaX));
+        const newHeight = Math.max(minHeight, Math.min(maxHeight, startHeight - deltaY));
+        chatWindow.style.width = newWidth + 'px';
+        if (newHeight > minHeight && newHeight < maxHeight) {
+          chatWindow.style.height = newHeight + 'px';
+          chatWindow.style.bottom = (startBottom - deltaY) + 'px';
+        }
+      }
+
+      if (currentHandle.classList.contains('resize-handle-top-left')) {
+        const newWidth = Math.max(minWidth, Math.min(maxWidth, startWidth - deltaX));
+        const newHeight = Math.max(minHeight, Math.min(maxHeight, startHeight - deltaY));
+        if (newWidth > minWidth && newWidth < maxWidth) {
+          chatWindow.style.width = newWidth + 'px';
+          chatWindow.style.right = (startRight - deltaX) + 'px';
+        }
+        if (newHeight > minHeight && newHeight < maxHeight) {
+          chatWindow.style.height = newHeight + 'px';
+          chatWindow.style.bottom = (startBottom - deltaY) + 'px';
+        }
+      }
+
+      if (currentHandle.classList.contains('resize-handle-bottom-right')) {
+        const newWidth = Math.max(minWidth, Math.min(maxWidth, startWidth + deltaX));
+        const newHeight = Math.max(minHeight, Math.min(maxHeight, startHeight + deltaY));
+        chatWindow.style.width = newWidth + 'px';
+        chatWindow.style.height = newHeight + 'px';
+      }
+
+      if (currentHandle.classList.contains('resize-handle-bottom-left')) {
+        const newWidth = Math.max(minWidth, Math.min(maxWidth, startWidth - deltaX));
+        const newHeight = Math.max(minHeight, Math.min(maxHeight, startHeight + deltaY));
+        if (newWidth > minWidth && newWidth < maxWidth) {
+          chatWindow.style.width = newWidth + 'px';
+          chatWindow.style.right = (startRight - deltaX) + 'px';
+        }
+        chatWindow.style.height = newHeight + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', function() {
+      if (isResizing) {
+        isResizing = false;
+        currentHandle = null;
+        document.body.style.userSelect = '';
+      }
+    });
+  })();
+</script>
