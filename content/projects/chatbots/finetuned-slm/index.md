@@ -4,7 +4,7 @@ type: project
 draft: false
 featured_image: ""
 summary: "Small Language Model fine-tuned for specialized tasks"
-weight: 2
+weight: 3
 authors: []
 show_authors: false
 show_date: false
@@ -14,10 +14,19 @@ show_comments: false
 hide_image: true
 ---
 
-An AI-powered web application that analyzes equipment failure claims and generates detailed assessments using a fine-tuned GPT-2 Large language model. Built with Python and Streamlit, the system leverages PEFT (Parameter-Efficient Fine-Tuning) with LoRA adapters to provide intelligent claim analysis while maintaining a small model footprint (~10-20MB adapters). The model was trained on 3,000 synthetic claims covering various equipment types, failure modes, and scenarios. Deployed on Hugging Face Spaces with Docker, demonstrating end-to-end ML workflow from data generation and model training to production deployment. Technologies: Python, Transformers, PEFT/LoRA, Streamlit, Docker, Git LFS, Hugging Face Spaces.
+AI-powered system that analyzes equipment failure claims and generates detailed assessments using a fine-tuned GPT-2 language model.
 
-## Demo 
-https://velagalasr-failure-claims-assessment.hf.space
+***Key Features***
+- **Intelligent Analysis**: Fine-tuned GPT-2 Large model for specialized claim assessment
+- **Efficient Architecture**: PEFT/LoRA adapters keep model size small (~10-20MB)
+- **Rich Training Data**: 3,000 synthetic claims covering diverse equipment & failure scenarios
+- **Production-Ready**: Deployed on Hugging Face Spaces with Docker
+
+**Tech Stack** : Python • Transformers • PEFT/LoRA • Streamlit • Docker • Hugging Face Spaces
+
+**Impact** : End-to-end ML workflow demonstrating data generation, model fine-tuning, and production deployment at scale.
+
+**Demo** https://velagalasr-failure-claims-assessment.hf.space
 <iframe
 	src="https://velagalasr-failure-claims-assessment.hf.space"
 	frameborder="0"

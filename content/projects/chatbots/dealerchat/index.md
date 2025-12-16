@@ -3,7 +3,7 @@ title: Dealer Chat Bot
 type: plain
 draft: false
 featured_image: ""
-summary: "RAG-based Q&A system for dealer support with multi-agent orchestration"
+summary: "Chatbot with LangGraph orchestration, Rules +LLM, RAG, multi-agent system"
 weight: 1
 authors: []
 show_authors: false
